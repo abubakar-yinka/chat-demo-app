@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import HookForm from '../../components/HookForm';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -24,6 +24,10 @@ const Auth: React.FC = () => {
             btnText="Enter Chat"
             handleFormSubmit={handleSubmit}
           />
+          <Text color={'red'} marginTop={5}>
+            PS: Username is case-insensitive, using a taken username will continue the chat session
+            of that user when using the same browser
+          </Text>
         </Box>
       </Flex>
     </Flex>
