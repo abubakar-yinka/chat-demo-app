@@ -4,7 +4,7 @@ A Simple cross-tab communication using LocalStorage API and events visually pres
 
 ## Technology Used
 
-- React, Redux Toolkit, and Hooks,
+- React, Redux Toolkit, Hooks and Chakra UI,
 - TypeScript: For static typing, type inference, IntelliSense support
 - Styled Components: for dynamic styling and avoiding className bugs.
 
