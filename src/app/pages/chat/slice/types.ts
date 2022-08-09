@@ -3,7 +3,7 @@ export type ChatState = {
   messages: Message[];
 };
 export interface Message {
-  message: string;
-  user: string;
+  messageText: string;
+  author: string;
   uid: string;
 }
