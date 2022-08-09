@@ -10,7 +10,7 @@ const initialState: AccountState = {
 };
 
 export const accountSlice = createSlice({
-  name: 'counter',
+  name: 'account',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {

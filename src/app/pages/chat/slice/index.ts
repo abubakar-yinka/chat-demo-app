@@ -9,7 +9,7 @@ const initialState: ChatState = {
 };
 
 export const chatSlice = createSlice({
-  name: 'counter',
+  name: 'chat',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
