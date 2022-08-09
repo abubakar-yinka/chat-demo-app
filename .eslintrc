@@ -15,7 +15,6 @@
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "no-unused-vars": "warn",
-    "no-console": "warn",
     "arrow-body-style": "off",
     "consistent-return": "off",
     "no-else-return": "off",
