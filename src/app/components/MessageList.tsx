@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Avatar, Flex, Text } from '@chakra-ui/react';
+import { Message } from '../pages/chat/slice/types';
 
 interface Props {
-  messages: any;
+  messages: Message[];
+  userName: string;
 }
 
-const MessageList: React.FC<Props> = ({ messages }) => {
+const MessageList: React.FC<Props> = ({ messages, userName }) => {
   const AlwaysScrollToBottom = () => {
     const elementRef = useRef() as React.LegacyRef<HTMLDivElement> | undefined;
     useEffect(() => ((elementRef as any).current as any).scrollIntoView());
@@ -14,12 +16,12 @@ const MessageList: React.FC<Props> = ({ messages }) => {
 
   return (
     <Flex w="100%" h="80%" overflowY="scroll" flexDirection="column" p="3">
-      {messages.map((item, index) => {
-        if (item.from === 'me') {
+      {messages.map((message, index) => {
+        if (message.author.toLowerCase() === userName.toLowerCase()) {
           return (
             <Flex key={index} w="100%" justify="flex-end">
               <Flex bg="black" color="white" minW="100px" maxW="350px" my="1" p="3">
-                <Text>{item.text}</Text>
+                <Text>{message.messageText}</Text>
               </Flex>
             </Flex>
           );
@@ -27,12 +29,12 @@ const MessageList: React.FC<Props> = ({ messages }) => {
           return (
             <Flex key={index} w="100%">
               <Avatar
-                name={item.author}
-                src={`https://ui-avatars.com/api/?name=${item.author}`}
+                name={message.author}
+                src={`https://ui-avatars.com/api/?name=${message.author}`}
                 bg="blue.300"
               ></Avatar>
               <Flex bg="gray.100" color="black" minW="100px" maxW="350px" my="1" p="3">
-                <Text>{item.text}</Text>
+                <Text>{message.messageText}</Text>
               </Flex>
             </Flex>
           );
