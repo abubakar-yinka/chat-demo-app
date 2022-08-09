@@ -16,3 +16,9 @@ A Simple cross-tab communication using `LocalStorage` API and events visually pr
    - sending messages to chat,
    - showing message history and,
    - loading more messages when scroll the chats to the top, after 25 messages
+
+## *Screenshots*
+![Repository Banner](screenshots/auth_screen_prompt.png)
+![Repository Banner](screenshots/chat_screen_1.png)
+![Repository Banner](screenshots/chat_screen_2.png)
+![Repository Banner](screenshots/chat_screen_3.png)
