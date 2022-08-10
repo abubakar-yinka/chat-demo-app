@@ -1,11 +1,11 @@
 export const STORAGE_KEY = 'demo-app:chats';
 
 export const loadChats = () => {
-  const tryValue = localStorage.getItem(STORAGE_KEY);
+  const chatHistory = localStorage.getItem(STORAGE_KEY);
   try {
-    const value = JSON.parse(tryValue as string);
-    if (Array.isArray(value)) {
-      return value;
+    const messages = JSON.parse(chatHistory as string);
+    if (Array.isArray(messages)) {
+      return messages;
     } else {
       return [];
     }
