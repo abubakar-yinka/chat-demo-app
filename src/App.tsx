@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider, CSSReset, theme } from '@chakra-ui/react';
+import Chat from './app/pages/chat';
+import { useSelector } from 'react-redux';
+import { selectAuthState, selectUserName } from './app/pages/auth/slice/selectors';
+import Auth from './app/pages/auth';
 
-function App() {
+const App: React.FC = () => {
+  const isUserAuthenticated = useSelector(selectAuthState);
+  const userName = useSelector(selectUserName);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      {isUserAuthenticated ? <Chat userName={userName} /> : <Auth />}
+    </ChakraProvider>
   );
-}
+};
 
 export default App;
